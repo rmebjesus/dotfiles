@@ -1,0 +1,76 @@
+#!/bin/bash
+
+# General purpose aliases
+alias ci='ci -u'
+alias co='co -l'
+alias df='df -h --total'
+alias du='du -h --total'
+alias h='history'
+alias less='less -M'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias wget='wget -c'
+alias j='jobs -l'
+alias lsg='ls | grep $1'
+alias ls='ls --color=auto'
+alias l.='ls -dF .* --color=auto'
+alias ll='ls -lF --color=auto'
+alias less='less -M'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias mkdir='mkdir -p'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ~='cd ~' # `cd` is probably faster to type though
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Get week number
+alias week='date +%V'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#	sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Stopwatch
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
+# IP addresses
+alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# Docker aliases
+alias di='docker images'
+alias drmi='docker rmi'
+alias drmia='docker rmi -f $(docker images -q)'
+alias dps='docker ps -a'
+alias dk='docker kill'
+alias drm='docker rm'
+alias dka='docker kill $(docker ps -q -a)'
+alias drma='docker rm $(docker ps -q -a)'
+alias dl='docker logs -f'
+alias dshell='docker run --rm -it -v $(pwd):/tmp/host oversee/centos bash'
+alias de='docker exec -it'
+
+# Personal machine alias
+alias fping='fping -a -g 192.168.1.0 192.168.1.255'
+alias wakeflumen='wakelan 00:1c:f0:bb:15:85'
+
+# copy working directory
+alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
+
+# grep through history, usage: hisgrep filename_to_grep
+alias hisgrep='history | grep --color=auto'
+
+# Start a Python HTTP server on port 8000
+alias webshare='python -m SimpleHTTPServer'

@@ -1,0 +1,84 @@
+#!/bin/bash
+
+# Create a new directory and enter it
+mkd() {
+  mkdir -p "$@" && cd "$@"
+}
+
+# Extract archive
+extract () {
+  if [ "$#" -eq 0 ] ; then
+    printf "Illegal argument parameters.\nUsage: extract <file>\n"
+  else
+    case $1 in
+      *.tar.bz2)   tar xjf $1     ;;
+      *.tar.gz)    tar xzf $1     ;;
+      *.tar.xz)    tar xJf $1     ;;
+      *.xz)        unxz $1        ;;
+      *.bz2)       bunzip2 $1     ;;
+      *.rar)       unrar e $1     ;;
+      *.gz)        gunzip $1      ;;
+      *.tar)       tar xf $1      ;;
+      *.tbz2)      tar xjf $1     ;;
+      *.tgz)       tar xzf $1     ;;
+      *.zip)       unzip $1       ;;
+      *.Z)         uncompress $1  ;;
+      *.7z)        7z x $1        ;;
+      *.war)       jar xvf $1     ;;
+      *)     echo "'$1' cannot be extracted via extract()" ;;
+  esac
+  fi
+}
+
+# check if uri is up
+isup() {
+  local uri=$1
+  if curl -s --head  --request GET "$uri" | grep "200 OK" > /dev/null ; then
+    notify-send --urgency=critical "$uri is down"
+  else
+    notify-send --urgency=low "$uri is up"
+  fi
+}
+
+# Get external IP address
+# source: http://www.if-not-true-then-false.com/2010/linux-get-ip-address/
+ext-ip () { curl ifconfig.me; echo; }
+
+# Colored less man pages
+# NOTE: it crashes SCP and SFTP remotes connects to this machine
+# source: http://www.cyberciti.biz/faq/linux-unix-colored-man-pages-with-less-command/
+man() {
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+  man "$@"
+}
+
+# Determine size of a file or total size of a directory
+fs() {
+  if du -b /dev/null > /dev/null 2>&1; then
+    local arg=-sbh
+  else
+    local arg=-sh
+  fi
+  if [[ -n "$@" ]]; then
+    du $arg -- "$@"
+  else
+    du $arg .[^.]* *
+fi
+}
+
+# Run `dig` and display the most useful info
+digga() {
+  dig +nocmd "$1" any +multiline +noall +answer
+}
+
+# Query Wikipedia via console over DNS
+mwiki() {
+  dig +short txt "$*".wp.dg.cx
+}

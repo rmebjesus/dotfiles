@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Make vim the default editor.
+export EDITOR='/usr/bin/vim'
+export SVN_EDITOR='/usr/bin/vim'
+
+# Increase Bash history size. Allow 32³ entries; the default is 500.
+export HISTSIZE='32768'
+export HISTFILESIZE="${HISTSIZE}"
+
+# Prefer US English and use UTF-8.
+export LANG='en_US.utf-8'
+export LC_ALL='en_US.utf-8'
+
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Highlight section titles in manual pages.
+export LESS_TERMCAP_md="${yellow}"
+
+# Always enable colored `grep` output.
+export GREP_OPTIONS='--color=auto'
+
+# Fix IntelliJ IDEA JDK Required error
+export JAVA_HOME='/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.79-2.5.5.1.el7_1.x86_64/lib'
