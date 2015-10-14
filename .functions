@@ -5,6 +5,16 @@ mkd() {
   mkdir -p "$@" && cd "$@"
 }
 
+# Converts an decimal value to hexadecimal.
+dectohex() {
+ if [ $# -eq 0 ]; then
+   echo "Missing argument, make sure to pass decimal value."
+   exit 0
+ else
+   printf '%X\n' "$1"
+ fi
+}
+
 # Extract archive
 extract () {
   if [ "$#" -eq 0 ] ; then
