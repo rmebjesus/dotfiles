@@ -21,7 +21,7 @@ help:
 	@echo "Usage:"
 	@echo ""
 	@echo "make list	-- Show dotfiles in this repository"
-	@echo "make update	-- Fetch changes for this repository"
+	@echo "make update	-- Fetch changes/updates for this repository"
 	@echo "make install	-- Install dotfiles"
 	@echo ""
 
