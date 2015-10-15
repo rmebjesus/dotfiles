@@ -23,7 +23,7 @@ trim_trailing_whitespace = false
 indent_style = space
 indent_size = 4
 
-[*.{sh,bashrc}]
+[*.{sh,bashrc,bash_profile}]
 indent_style = space
 indent_style = 2
 end_of_line = lf
