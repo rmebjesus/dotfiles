@@ -1,6 +1,6 @@
 .PHONY: all default help list update
 
-DOTFILES = .aliases .bash_profile .bash_prompt .bashrc .editorconfig .exports .functions .vimrc
+DOTFILES = .aliases .bash_profile .bash_prompt .bashrc .editorconfig .exports .functions .gitconfig .vimrc
 
 all: update install
 
@@ -14,6 +14,7 @@ install:
 	/bin/ln -sfnv $(CURDIR)/.editorconfig $(HOME)/.editorconfig
 	/bin/ln -sfnv $(CURDIR)/.exports $(HOME)/.exports
 	/bin/ln -sfnv $(CURDIR)/.functions $(HOME)/.functions
+	/bin/ln -sfnv $(CURDIR)/.gitconfig $(HOME)/.gitconfig
 	/bin/ln -sfnv $(CURDIR)/.vimrc $(HOME)/.vimrc
 
 help:
