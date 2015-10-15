@@ -1,5 +1,7 @@
 [user]
 	name = Ricardo Jesus
 	email = ricardo.meb.jesus@gmail.com
+[github]
+	username = rmebjesus
 [core]
 	editor = vim
