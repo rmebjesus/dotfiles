@@ -21,5 +21,5 @@ export LESS_TERMCAP_md="${yellow}"
 # Always enable colored `grep` output.
 export GREP_OPTIONS='--color=auto'
 
-# Fix IntelliJ IDEA JDK Required error
+# CentOS 7.x 
 export JAVA_HOME='/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.85-2.6.1.2.el7_1.x86_64/jre'
