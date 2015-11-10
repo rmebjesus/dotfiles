@@ -18,6 +18,7 @@ indent_size = 2
 # Trailing whitespace is significant in markdown files
 [*.md]
 trim_trailing_whitespace = false
+indent_size = 4
 
 [*.py]
 indent_style = space
@@ -37,9 +38,17 @@ indent_size = 4
 end_of_line = lf
 max_line_length = 80
 
+[Vagrantfile]
+indent_style = space
+indent_size = 2
+
 [*.xml]
 indent_style = space
 indent_size = 4
 
 [Makefile]
 indent_style = tab
+
+[*.rb]
+indent_style = space
+indent_size = 2
