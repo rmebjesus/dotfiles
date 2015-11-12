@@ -1,7 +1,7 @@
 # .bash_profile
 
 # Add `~/bin` and `~/.local/bin` to `$PATH`
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.rvm/bin
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -10,6 +10,9 @@ for file in ~/.{bash_prompt,aliases,functions,exports}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
+
+ # Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
