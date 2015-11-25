@@ -7,7 +7,7 @@ case $- in
 esac
 
 for file in /etc/bash_completion.d/* ; do
-	source "$file"
+  source "$file"
 done
 
 [ -n "$PS1" ] && source ~/.bash_profile
