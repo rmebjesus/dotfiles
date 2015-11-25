@@ -7,7 +7,7 @@
 DOTFILES_DIR=~/dotfiles
 TIME=$( date +"%Y%m%d" )
 BACKUP_DIR=~/dotfiles_$TIME
-DOTFILES=".aliases .bash_profile .bash_prompt .bashrc .editorconfig .exports .functions .vimrc"
+DOTFILES=".aliases .bash_profile .bash_prompt .bashrc .editorconfig .exports .functions .gitconfig .vimrc"
 
 # backup existing dotfiles and create symlinked dotfiles in homedir
 echo "Moving any existing dotfiles to $BACKUP_DIR..."
