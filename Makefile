@@ -1,6 +1,6 @@
 .PHONY: all default help list update
 
-DOTFILES = .aliases .bash_profile .bash_prompt .bashrc .editorconfig .exports .functions .gitconfig .vimrc
+DOTFILES = .aliases .bash_profile .bash_prompt .bashrc .editorconfig .exports .functions .gitconfig .vimrc .gvimrc .tmux.conf
 
 all: update install
 
@@ -16,6 +16,8 @@ install:
 	/bin/ln -sfnv $(CURDIR)/.functions $(HOME)/.functions
 	/bin/ln -sfnv $(CURDIR)/.gitconfig $(HOME)/.gitconfig
 	/bin/ln -sfnv $(CURDIR)/.vimrc $(HOME)/.vimrc
+	/bin/ln -sfnv $(CURDIR)/.gvimrc $(HOME)/.gvimrc
+	/bin/ln -sfnv $(CURDIR)/.byobu/.tmux.conf
 
 help:
 	@echo ""
