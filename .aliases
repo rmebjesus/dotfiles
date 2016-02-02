@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # General purpose aliases
 alias ci='ci -u'

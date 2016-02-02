@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # PURPOSE: deploy dotfiles in the home directory while backing up existing ones.
 
