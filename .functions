@@ -5,7 +5,7 @@ mkd() {
   mkdir -p "$@" && cd "$@"
 }
 
-# Converts an decimal value to hexadecimal.
+# Converts an decimal value to hexadecimal
 dectohex() {
  if [ $# -eq 0 ]; then
    echo "Missing argument, make sure to pass decimal value."
@@ -40,7 +40,7 @@ extract () {
   fi
 }
 
-# check if uri is up
+# Check if uri is up
 isup() {
   local uri=$1
   if curl -s --head  --request GET "$uri" | grep "200 OK" > /dev/null ; then
