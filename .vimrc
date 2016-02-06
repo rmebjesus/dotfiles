@@ -33,7 +33,6 @@ set showmode
 set hidden
 set wildmenu
 set wildmode=list:longest
-set visualbell
 set cursorline
 set ttyfast
 set ruler
@@ -69,4 +68,8 @@ vnoremap > >gv " better indentation
 " Tests for support and enables if yes
 if has('mouse')
       set mouse=a
-  endif
+endif
+
+" Set GVIM font
+set guifont=Consolas\ 10
+
