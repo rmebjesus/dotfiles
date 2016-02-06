@@ -1,6 +1,6 @@
 .PHONY: all default help list update
 
-DOTFILES = .aliases .bash_profile .bash_prompt .bashrc .editorconfig .exports .functions .gitconfig .vimrc .gvimrc .tmux.conf
+DOTFILES = .aliases .bash_profile .bash_prompt .bashrc .editorconfig .exports .functions .gitconfig .gvimrc .tmux.conf .vimrc 
 
 all: update install
 
