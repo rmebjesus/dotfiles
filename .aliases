@@ -3,7 +3,7 @@
 # General purpose aliases
 alias ci='ci -u'
 alias co='co -l'
-alias df='df -h --total'
+alias df='df -Th --total'
 alias du='du -h --total'
 alias h='history'
 alias less='less -M'
