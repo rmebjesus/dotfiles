@@ -35,6 +35,7 @@ extract () {
       *.Z)         uncompress $1  ;;
       *.7z)        7z x $1        ;;
       *.war)       jar xvf $1     ;;
+      *.deb)       ar xv $1       ;;
       *)     echo "'$1' cannot be extracted via extract()" ;;
   esac
   fi
