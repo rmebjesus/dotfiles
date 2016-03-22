@@ -78,3 +78,14 @@ set guifont=Consolas\ 10
 " See: https://github.com/tpope/vim-markdown and 
 autocmd BufNewFile,BufFilePre,BufRead,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['csharp=cs', 'c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'html', 'python', 'bash=sh']
+
+" Syntastic syntax checking plugin
+" See: https://github.com/scrooloose/syntastic.git for requirements
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
