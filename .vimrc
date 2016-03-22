@@ -77,6 +77,4 @@ set guifont=Consolas\ 10
 " with .markdown extension.
 " See: https://github.com/tpope/vim-markdown and 
 autocmd BufNewFile,BufFilePre,BufRead,BufReadPost *.md set filetype=markdown
-let g:vim_markdown_fenced_languages = ['csharp=cs', 'c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'html', 'python', 'bash=sh']
-" If this doesn't work try let g:markdown_fenced_languages instead of
-" g:vim_markdown_fenced_languages
+let g:markdown_fenced_languages = ['csharp=cs', 'c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'html', 'python', 'bash=sh']
