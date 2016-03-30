@@ -78,3 +78,7 @@ alias webshare='python -m SimpleHTTPServer'
 
 # Veewee without bundle exec
 alias veewee='bundle exec veewee'
+
+# Enforce CPU scaling
+alias powersave='echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null'
+alias performance='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null'
