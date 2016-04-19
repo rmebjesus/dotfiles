@@ -100,3 +100,7 @@ let g:syntastic_error_symbol = '✗✗'
 let g:syntastic_style_error_symbol = '✠✠'
 let g:syntastic_warning_symbol = '∆∆'
 let g:syntastic_style_warning_symbol = '≈≈'
+
+" Monokai colorscheme
+colorscheme monokai
+let g:monokai_italic = 1
