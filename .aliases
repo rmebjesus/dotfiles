@@ -80,5 +80,9 @@ alias webshare='python -m SimpleHTTPServer'
 alias veewee='bundle exec veewee'
 
 # Enforce CPU scaling
+alias scaling='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 alias powersave='echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null'
 alias performance='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor >/dev/null'
+
+# Hycubed/todo-md: only use the global todo list
+alias todo="todo -g"
