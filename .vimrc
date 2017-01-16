@@ -75,7 +75,7 @@ set guifont=Consolas\ 10
 
 " Enable Markdown syntax highligthing, by default VIM only enables it for files
 " with .markdown extension.
-" See: https://github.com/tpope/vim-markdown and 
+" See: https://github.com/tpope/vim-markdown and
 autocmd BufNewFile,BufFilePre,BufRead,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['csharp=cs', 'c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'html', 'python', 'bash=sh']
 
@@ -104,3 +104,6 @@ let g:syntastic_style_warning_symbol = '≈≈'
 " Monokai colorscheme
 colorscheme monokai
 let g:monokai_italic = 1
+
+" GIT: wrap the body at 72 characters at commit
+autocmd Filetype gitcommit setlocal spell textwidth=72
