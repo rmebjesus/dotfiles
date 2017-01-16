@@ -20,3 +20,6 @@ export GREP_OPTIONS='--color=auto'
 
 # CentOS 7.x
 export JAVA_HOME='/usr/java/default'
+
+# IDEA-78860 workaround, source: https://youtrack.jetbrains.com/issue/IDEA-78860
+export IBUS_ENABLE_SYNC_MODE='1'
