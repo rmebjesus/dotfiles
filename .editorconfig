@@ -37,15 +37,21 @@ indent_size = 2
 indent_style = space
 indent_size = 4
 
-[*.py]
-indent_style = space
-indent_size = 4
-
 [Dockerfile]
 indent_style = space
 indent_size = 4
 end_of_line = lf
 max_line_length = 80
+
+[*.py]
+indent_style = space
+indent_size = 4
+
+[{*.robot}]
+indent_size = 2
+
+[*.rst]
+trim_trailing_whitespace = false
 
 [Makefile]
 indent_style = tab
